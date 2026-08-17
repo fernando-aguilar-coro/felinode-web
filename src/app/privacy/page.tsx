@@ -1,70 +1,96 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
+import Link from "next/link";
+import { ShieldCheck, ArrowRight, Smartphone } from "lucide-react";
+import { getAllApps, STUDIO_INFO } from "@/data/apps";
 
 export const metadata: Metadata = {
-    title: 'Política de Privacidad | nekoEnglish',
-    description: 'Política de Privacidad de la aplicación nekoEnglish.',
+  title: "Políticas de Privacidad | felinode Apps",
+  description: "Centro de políticas de privacidad para todas las aplicaciones móviles de felinode.",
 };
 
-export default function PrivacyPolicy() {
-    const currentDate = new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+export default function PrivacyHubPage() {
+  const apps = getAllApps();
+  const currentDate = new Date().toLocaleDateString("es-ES", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
-    return (
-        <div className="container legal-page">
-            <h1 className="legal-title">Política de Privacidad</h1>
+  return (
+    <div className="container legal-page">
+      <div className="legal-header">
+        <h1 className="legal-title">Políticas de Privacidad</h1>
+        <p className="legal-subtitle">
+          En <strong>{STUDIO_INFO.name}</strong> la privacidad de nuestros usuarios es un pilar fundamental. Selecciona una aplicación para consultar su política específica.
+        </p>
+      </div>
 
-            <div className="legal-content">
-                <p>
-                    <strong>Última actualización:</strong> {currentDate}
-                </p>
-
-                <p>
-                    Gracias por utilizar nekoEnglish. Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos
-                    su información cuando utiliza nuestra aplicación móvil de aprendizaje de inglés en Android ("la App").
-                </p>
-
-                <h2>1. Información que Recopilamos</h2>
-                <p>Al utilizar nekoEnglish, recopilamos diferentes tipos de información para proporcionarle un mejor servicio educativo:</p>
-                <ul>
-                    <li><strong>Información de Cuenta:</strong> Recopilamos su dirección de correo electrónico cuando se registra o inicia sesión en la aplicación, la cual es gestionada a través de Supabase como proveedor de autenticación.</li>
-                    <li><strong>Datos de Progreso:</strong> Guardamos su progreso de aprendizaje, puntajes y racha dentro de la aplicación para sincronizarlos en la nube y permitirle mantener su avance de forma offline.</li>
-                    <li><strong>Audio:</strong> nekoEnglish puede requerir permisos de micrófono con fines estrictamente educativos (ej. ejercicios de pronunciación). Los audios se procesan habitualmente de manera local o segura y <strong>no</strong> se almacenan ni se asocian a su perfil para otros fines que no sean el feedback en tiempo real.</li>
-                </ul>
-
-                <h2>2. Uso de la Información</h2>
-                <p>Utilizamos la información recopilada para:</p>
-                <ul>
-                    <li>Proveer, mantener y mejorar la funcionalidad de la App.</li>
-                    <li>Sincronizar su progreso entre dispositivos o prevenir la pérdida de datos y sesiones.</li>
-                    <li>Responder a sus comentarios o correos de soporte técnico de forma adecuada.</li>
-                </ul>
-
-                <h2>3. Servicios de Terceros</h2>
-                <p>La Aplicación utiliza servicios externos que pueden recopilar información utilizada para identificarlo u optimizar el servicio:</p>
-                <ul>
-                    <li><strong>Supabase:</strong> Utilizado como nuestra base de datos remota para autenticar su cuenta y sincronizar de forma segura el estado de sus lecciones.</li>
-                    <li><strong>Google Play Services:</strong> Servicios estándar requeridos por el ecosistema Android y Google Play Store.</li>
-                </ul>
-
-                <h2>4. Seguridad y Derechos del Usuario</h2>
-                <p>
-                    Valoramos su confianza al proporcionarnos su Información Personal. Utilizamos los canales seguros de la industria
-                    (encriptación en tránsito y bases de datos seguras en la nube) para proteger su integridad.
-                </p>
-                <p>
-                    Como usuario, usted tiene el derecho a requerir la <strong>eliminación total de su cuenta y sus datos vinculados</strong> en cualquier momento. Puede hacer esto directamente dentro de la aplicación o contactándonos a través del correo de soporte listado en la parte posterior.
-                </p>
-
-                <h2>5. Responsable y Contacto</h2>
-                <p>
-                    nekoEnglish es desarrollado de forma independiente. Si tiene alguna duda o sugerencia sobre nuestra
-                    Política de Privacidad, no dude en contactarme:
-                </p>
-                <p>
-                    <strong>Desarrollador:</strong> Fabrizio Fernando Aguilar Coro<br />
-                    <strong>Ubicación:</strong> Sucre, Bolivia<br />
-                    <strong>Correo de contacto:</strong> fernandoaguilarcoro@gmail.com
-                </p>
-            </div>
+      <div style={{ marginBottom: "2.5rem" }}>
+        <h2 style={{ fontSize: "1.2rem", color: "#e4e4e7", marginBottom: "1rem" }}>
+          Políticas por Aplicación
+        </h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1rem" }}>
+          {apps.map((app) => (
+            <Link 
+              key={app.slug} 
+              href={`/privacy/${app.slug}`}
+              style={{
+                backgroundColor: "var(--card)",
+                border: "1px solid var(--border)",
+                borderRadius: "var(--radius)",
+                padding: "1.5rem",
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.5rem",
+                transition: "all 0.2s ease",
+              }}
+              className="app-card-interactive"
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span style={{ fontSize: "1.2rem", fontWeight: 700, color: "#ffffff" }}>
+                  {app.name}
+                </span>
+                <ArrowRight size={18} style={{ color: app.accentColor }} />
+              </div>
+              <p style={{ fontSize: "0.85rem", color: "var(--muted)" }}>
+                {app.legal.privacyPolicy.summary}
+              </p>
+              <span style={{ fontSize: "0.75rem", color: app.accentColor, marginTop: "auto", paddingTop: "0.5rem" }}>
+                Ver Política de {app.name} &rarr;
+              </span>
+            </Link>
+          ))}
         </div>
-    );
+      </div>
+
+      <div className="legal-content">
+        <h2>Declaración General del Estudio ({STUDIO_INFO.name})</h2>
+        <p>
+          <strong>Última actualización:</strong> {currentDate}
+        </p>
+        <p>
+          Esta declaración de privacidad rige para las aplicaciones móviles desarrolladas y publicadas por {STUDIO_INFO.developer} bajo la marca <strong>{STUDIO_INFO.name}</strong>.
+        </p>
+        <p>
+          Nos comprometemos a:
+        </p>
+        <ul>
+          <li><strong>No vender datos:</strong> Jamás comercializamos, alquilamos ni transferimos información personal de nuestros usuarios a corredores de datos ni redes publicitarias invasivas.</li>
+          <li><strong>Minimización de datos:</strong> Solo recopilamos los datos estrictamente necesarios para el funcionamiento de las funciones solicitadas por el usuario.</li>
+          <li><strong>Arquitectura Local-First:</strong> Priorizamos el almacenamiento de datos en el propio dispositivo del usuario siempre que sea factible tecnológicamente.</li>
+          <li><strong>Transparencia y Control:</strong> Facilitamos mecanismos claros para exportar o eliminar datos de forma definitiva.</li>
+        </ul>
+
+        <h2>Contacto de Privacidad</h2>
+        <p>
+          Para cualquier duda, solicitud de acceso o eliminación de datos respecto a cualquiera de nuestras apps, puedes ponerte en contacto directamente con el responsable:
+        </p>
+        <p>
+          <strong>Desarrollador:</strong> {STUDIO_INFO.developer} ({STUDIO_INFO.name})<br />
+          <strong>Ubicación:</strong> {STUDIO_INFO.location}<br />
+          <strong>Correo de contacto:</strong> {STUDIO_INFO.contactEmail}
+        </p>
+      </div>
+    </div>
+  );
 }
