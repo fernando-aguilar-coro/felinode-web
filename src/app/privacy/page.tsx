@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, ArrowRight, Smartphone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getAllApps, STUDIO_INFO } from "@/data/apps";
 
 export const metadata: Metadata = {
-  title: "Políticas de Privacidad | felinode Apps",
-  description: "Centro de políticas de privacidad para todas las aplicaciones móviles de felinode.",
+  title: "Privacidad de Grammar AI | QuantumLoop Labs",
+  description: "Información de privacidad para Grammar AI: Conversa y aprende (com.felinode.app), publicada por QuantumLoop Labs.",
 };
 
 export default function PrivacyHubPage() {
@@ -19,9 +19,9 @@ export default function PrivacyHubPage() {
   return (
     <div className="container legal-page">
       <div className="legal-header">
-        <h1 className="legal-title">Políticas de Privacidad</h1>
+        <h1 className="legal-title">Privacidad de Grammar AI</h1>
         <p className="legal-subtitle">
-          En <strong>{STUDIO_INFO.name}</strong> la privacidad de nuestros usuarios es un pilar fundamental. Selecciona una aplicación para consultar su política específica.
+          <strong>Grammar AI: Conversa y aprende</strong> (com.felinode.app) es una aplicación publicada por <strong>QuantumLoop Labs</strong>. Consulta aquí la información de privacidad y las políticas disponibles para nuestras aplicaciones.
         </p>
       </div>
 
@@ -64,12 +64,12 @@ export default function PrivacyHubPage() {
       </div>
 
       <div className="legal-content">
-        <h2>Declaración General del Estudio ({STUDIO_INFO.name})</h2>
+        <h2>Declaración de Privacidad de Grammar AI</h2>
         <p>
           <strong>Última actualización:</strong> {currentDate}
         </p>
         <p>
-          Esta declaración de privacidad rige para las aplicaciones móviles desarrolladas y publicadas por {STUDIO_INFO.developer} bajo la marca <strong>{STUDIO_INFO.name}</strong>.
+          Esta declaración corresponde a <strong>Grammar AI: Conversa y aprende</strong> (com.felinode.app), publicada por <strong>QuantumLoop Labs</strong>.
         </p>
         <p>
           Nos comprometemos a:
@@ -86,7 +86,7 @@ export default function PrivacyHubPage() {
           Para cualquier duda, solicitud de acceso o eliminación de datos respecto a cualquiera de nuestras apps, puedes ponerte en contacto directamente con el responsable:
         </p>
         <p>
-          <strong>Desarrollador:</strong> {STUDIO_INFO.developer} ({STUDIO_INFO.name})<br />
+          <strong>Desarrollador:</strong> QuantumLoop Labs<br />
           <strong>Ubicación:</strong> {STUDIO_INFO.location}<br />
           <strong>Correo de contacto:</strong> {STUDIO_INFO.contactEmail}
         </p>

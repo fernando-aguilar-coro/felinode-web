@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
-import { Code2, Smartphone, Shield, ArrowUpRight } from "lucide-react";
+import { Code2 } from "lucide-react";
 import { STUDIO_INFO, getAllApps } from "@/data/apps";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   keywords: [
     "felinode",
     "Mobile Apps",
-    "nekoEnglish",
+    "grammarAI",
     "Spent",
     "Expense Tracker",
     "Learn English",

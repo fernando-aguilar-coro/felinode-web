@@ -6,13 +6,11 @@ import {
   ArrowLeft, 
   ShieldCheck, 
   CheckCircle2, 
-  ExternalLink, 
   FileText, 
   Trash2, 
-  Sparkles,
-  Smartphone
+  Sparkles
 } from "lucide-react";
-import { getAppBySlug, getAllApps, STUDIO_INFO } from "@/data/apps";
+import { getAppBySlug, getAllApps } from "@/data/apps";
 import { DynamicIcon } from "@/components/DynamicIcon";
 
 interface Props {

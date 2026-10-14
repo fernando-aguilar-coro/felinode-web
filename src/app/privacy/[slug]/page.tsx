@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ShieldCheck, FileText } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { getAppBySlug, getAllApps, STUDIO_INFO } from "@/data/apps";
 
 interface Props {
@@ -101,7 +101,7 @@ export default async function AppPrivacyPage({ params }: Props) {
         </p>
 
         <p>
-          Gracias por utilizar <strong>{app.name}</strong>. Esta Política de Privacidad describe de manera transparente cómo se manejan, almacenan y protegen sus datos al utilizar la aplicación móvil en Android ("la App").
+          Gracias por utilizar <strong>{app.name}</strong> app de QuantumLoop Labs. Esta Política de Privacidad describe de manera transparente cómo se manejan, almacenan y protegen sus datos al utilizar la aplicación móvil en Android (&quot;la App&quot;).
         </p>
 
         {privacyData.sections.map((section, idx) => (
@@ -118,7 +118,6 @@ export default async function AppPrivacyPage({ params }: Props) {
           </div>
         ))}
 
-        <h2>Responsable del Tratamiento y Contacto</h2>
         <p>
           <strong>{app.name}</strong> es una aplicación desarrollada por {STUDIO_INFO.developer} bajo el estudio <strong>{STUDIO_INFO.name}</strong>. Si tiene cualquier duda o inquietud con respecto al tratamiento de sus datos, puede comunicarse directamente con nosotros:
         </p>

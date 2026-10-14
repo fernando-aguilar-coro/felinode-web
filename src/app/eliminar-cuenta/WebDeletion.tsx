@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type Session } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://placeholder.supabase.co";
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "placeholder-key";
 
-// Initialize Supabase client
+// Initialize Supabase client safely
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export default function WebDeletion() {
@@ -18,7 +18,7 @@ export default function WebDeletion() {
         type: "idle" | "error" | "success";
         message: string;
     }>({ type: "idle", message: "" });
-    const [session, setSession] = useState<any>(null);
+    const [session, setSession] = useState<Session | null>(null);
 
     // Initial check for session (e.g. after Google OAuth redirect)
     useEffect(() => {

@@ -1,15 +1,11 @@
 import Link from "next/link";
 import { 
-  Download, 
   Smartphone, 
   Sparkles, 
   ShieldCheck, 
   Zap, 
   CheckCircle2, 
   ArrowRight, 
-  Lock, 
-  Layers, 
-  Code2, 
   ExternalLink 
 } from "lucide-react";
 import { STUDIO_INFO, getAllApps } from "@/data/apps";

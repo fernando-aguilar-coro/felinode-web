@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FileText, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getAllApps, STUDIO_INFO } from "@/data/apps";
 
 export const metadata: Metadata = {

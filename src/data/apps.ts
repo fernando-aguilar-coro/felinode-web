@@ -47,12 +47,12 @@ export interface FelinodeApp {
 }
 
 export const APPS_DATA: Record<string, FelinodeApp> = {
-  "neko-english": {
-    slug: "neko-english",
-    name: "nekoEnglish",
+  "grammarAI": {
+    slug: "grammarAI",
+    name: "grammarAI",
     tagline: "Aprende inglés de forma inteligente e interactiva",
     description: "Domina el inglés estés donde estés con lecciones adaptativas creadas por IA, desafíos interactivos y análisis de pronunciación avanzado.",
-    longDescription: "nekoEnglish es una aplicación móvil diseñada para revolucionar la forma en que aprendes inglés. Combina algoritmos de inteligencia artificial para personalizar cada lección a tu ritmo, síntesis de voz neuronal de alta fidelidad para afinar tu oído y un modelo local-first que te permite aprender incluso sin conexión a internet.",
+    longDescription: "grammarAI es una aplicación móvil diseñada para revolucionar la forma en que aprendes inglés. Combina algoritmos de inteligencia artificial para personalizar cada lección a tu ritmo, síntesis de voz neuronal de alta fidelidad para afinar tu oído y un modelo local-first que te permite aprender incluso sin conexión a internet.",
     category: "Educación & IA",
     badge: "IA + Aprendizaje Offline",
     status: "coming_soon",
@@ -72,7 +72,7 @@ export const APPS_DATA: Record<string, FelinodeApp> = {
     features: [
       {
         title: "Modo 100% Offline",
-        description: "Descarga tus lecciones y practica sin necesidad de conexión a internet. nekoEnglish sincronizará tu progreso en la nube cuando vuelvas a estar conectado gracias a su tecnología local-first.",
+        description: "Descarga tus lecciones y practica sin necesidad de conexión a internet. grammarAI sincronizará tu progreso en la nube cuando vuelvas a estar conectado gracias a su tecnología local-first.",
         iconName: "WifiOff"
       },
       {
@@ -94,15 +94,15 @@ export const APPS_DATA: Record<string, FelinodeApp> = {
     legal: {
       privacyPolicy: {
         lastUpdated: "17 de agosto de 2026",
-        summary: "nekoEnglish prioriza la privacidad del estudiante. Tu progreso se procesa de forma local y solo se sincronizan datos esenciales cuando creas una cuenta.",
+        summary: "grammarAI prioriza la privacidad del estudiante. Tu progreso se procesa de forma local y solo se sincronizan datos esenciales cuando creas una cuenta.",
         sections: [
           {
             title: "1. Información que Recopilamos",
-            content: "Al utilizar nekoEnglish, recopilamos diferentes tipos de información para proporcionarle un mejor servicio educativo:",
+            content: "Al utilizar grammarAI, recopilamos diferentes tipos de información para proporcionarle un mejor servicio educativo:",
             items: [
               "Información de Cuenta: Recopilamos su dirección de correo electrónico cuando se registra o inicia sesión en la aplicación, la cual es gestionada a través de Supabase como proveedor seguro de autenticación.",
               "Datos de Progreso: Guardamos su progreso de aprendizaje, puntajes y racha dentro de la aplicación para sincronizarlos en la nube y permitirle mantener su avance de forma offline.",
-              "Audio y Micrófono: nekoEnglish puede requerir permisos de micrófono con fines estrictamente educativos (ej. ejercicios de pronunciación). Los audios se procesan habitualmente de manera local o segura y no se almacenan ni se asocian a su perfil para otros fines que no sean el feedback en tiempo real."
+              "Audio y Micrófono: grammarAI puede requerir permisos de micrófono con fines estrictamente educativos (ej. ejercicios de pronunciación). Los audios se procesan habitualmente de manera local o segura y no se almacenan ni se asocian a su perfil para otros fines que no sean el feedback en tiempo real."
             ]
           },
           {
@@ -130,11 +130,11 @@ export const APPS_DATA: Record<string, FelinodeApp> = {
       },
       termsOfService: {
         lastUpdated: "17 de agosto de 2026",
-        summary: "Términos y condiciones para el uso de la aplicación móvil nekoEnglish.",
+        summary: "Términos y condiciones para el uso de la aplicación móvil grammarAI.",
         sections: [
           {
             title: "1. Uso de la Aplicación",
-            content: "nekoEnglish es una aplicación de aprendizaje desarrollada por Fabrizio Fernando Aguilar Coro (felinode). La aplicación se proporciona 'tal cual' y no podemos garantizar que su uso nunca tendrá interrupciones o que estará completamente libre de errores. Usted es el responsable de mantener seguro su dispositivo móvil y credenciales."
+            content: "grammarAI es una aplicación de aprendizaje desarrollada por Fabrizio Fernando Aguilar Coro (felinode). La aplicación se proporciona 'tal cual' y no podemos garantizar que su uso nunca tendrá interrupciones o que estará completamente libre de errores. Usted es el responsable de mantener seguro su dispositivo móvil y credenciales."
           },
           {
             title: "2. Propiedad Intelectual",
@@ -142,7 +142,7 @@ export const APPS_DATA: Record<string, FelinodeApp> = {
           },
           {
             title: "3. Modificaciones al Servicio",
-            content: "nekoEnglish está sujeto a constantes actualizaciones de contenido y funcionalidad orientadas a mejorar su modelo educativo de inteligencia artificial. Nos reservamos el derecho de realizar cambios o actualizaciones para enriquecer el servicio."
+            content: "grammarAI está sujeto a constantes actualizaciones de contenido y funcionalidad orientadas a mejorar su modelo educativo de inteligencia artificial. Nos reservamos el derecho de realizar cambios o actualizaciones para enriquecer el servicio."
           }
         ]
       }
